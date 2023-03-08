@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="columns">
+        <div class="column is-one-third">
+            <div class="content">
+                <h3 class="title">Users</h3>
+
+                <h5 class="subtitle">Controller</h5>
+
+                <ul>
+                    {% for user in users %}
+                        <li>{{ user.username }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="column is-one-third">
+            <div class="content">
+                <h3 class="title">Users</h3>
+
+                <h5 class="subtitle">HedgeDoc</h5>
+
+                <ul>
+                    {% for user in hedgedoc_users %}
+                        {{ user }}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

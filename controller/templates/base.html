@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HedgeDoc | {% block title %}Controller{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+{% block body %}
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ url_for('accounts.index') }}">Controller</a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+               data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMain" class="navbar-menu">
+            <div class="navbar-end">
+                {% if g.user %}
+                    <p class="navbar-item">
+                        {{ g.user['username'].title() }}
+                    </p>
+                {% endif %}
+
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-warning" href="{{ url_for('auth.logout') }}">Abmelden</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            {% include '_messages.html' %}
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+{% endblock %}
+</body>
+
+</html>

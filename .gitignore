@@ -1,0 +1,10 @@
+# Flask
+.env
+db.sqlite3
+
+# Python
+/venv/
+__pycache__/
+
+# PyCharm
+/.idea/

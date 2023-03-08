@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-third">
+                    <h3 class="title">HedgeDoc</h3>
+
+                    <h5 class="subtitle">Controller</h5>
+
+                    <div class="block">
+
+                        <form method="post">
+                            <div class="field">
+                                <label class="label" for="username">Username</label>
+
+                                <div class="control">
+                                    <input class="input" name="username" id="username" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="password">Password</label>
+
+                                <div class="control">
+                                    <input class="input" type="password" name="password" id="password" required>
+                                </div>
+                            </div>
+
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button class="button is-primary" type="submit">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    {% include '_messages.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
