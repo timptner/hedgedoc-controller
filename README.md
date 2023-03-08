@@ -30,3 +30,7 @@ flask --app controller auth register <name> <password>
 ## Author
 
 © Aiven Timptner
+
+## License
+
+MIT
